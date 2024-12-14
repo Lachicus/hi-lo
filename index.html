@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Counting App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Card Counting Tool</h1>
+            <button id="settings-btn">⚙️ Settings</button>
+        </header>
+        <main>
+            <p>Input (2, 3, 4 or 00 to exit)</p>
+            <textarea id="card-input" placeholder="....."></textarea>
+            <button id="enter-btn">Enter</button>
+
+            <!-- Frequency Display Section -->
+            <div class="frequency-container">
+                <div id="high-cards" class="frequency-bar high"></div>
+                <div id="neutral-cards" class="frequency-bar neutral"></div>
+                <div id="low-cards" class="frequency-bar low"></div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output">
+                <div id="loading-line" class="loading-line hidden"></div>
+                <p>Running Count: <span id="running-count">0</span></p>
+                <p>True Count: <span id="true-count">0</span></p>
+                <p>Estimated Edge: <span id="estimated-edge">0%</span></p>
+                <p>Decks Remaining: <span id="decks-remaining">8.00</span></p>
+                <p>Total Cards Dealt: <span id="cards-dealt">8.00</span></p>
+            </div>
+
+            <div class="decision">
+                <p>Suggested Action: <span id="suggested-action">None</span></p>
+            </div>
+            <button id="end-btn" style="margin-top: 20px;">End Session</button>
+        </main>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h2>Settings</h2>
+            <label for="low-hotkey">Low Cards (current key: "2"):</label>
+            <input type="text" id="low-hotkey" placeholder="Enter new key (e.g., '2')">
+            
+            <label for="neutral-hotkey">Neutral Cards (current key: "4"):</label>
+            <input type="text" id="neutral-hotkey" placeholder="Enter new key (e.g., '4')">
+            
+            <label for="high-hotkey">High Cards (current key: "3"):</label>
+            <input type="text" id="high-hotkey" placeholder="Enter new key (e.g., '3')">
+            
+            <button id="save-settings">Save</button>
+            <button id="close-modal">Cancel</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+/* General Body and Layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+button {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+textarea {
+    width: 95%;
+    background-color: #1f1f1f;
+    letter-spacing:5px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 17px;
+    background-color: #1f1f1f; /* Background color of the textarea */
+    color: #ffffff;
+}
+
+.output {
+    position: relative; /* Allow positioning of loading line */
+    margin-bottom: 20px; /* Space below output section */
+}
+
+.output, .decision {
+    margin-top: 20px;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Modal Overlay */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures modal appears on top of other content */
+    overflow-y: auto; /* Handles scrolling for smaller screens */
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: #1f1f1f; /* Matches button and textarea styles */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Adds depth */
+    text-align: center; /* Centers the text inside */
+    max-width: 500px;
+    width: 90%; /* Ensures responsiveness for smaller screens */
+    position: relative;
+}
+
+/* Modal Title */
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Modal Input Labels */
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #b0b0b0; /* Subtle contrast for labels */
+    font-size: 1rem;
+}
+
+/* Modal Inputs */
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* Buttons inside Modal */
+.modal-content button {
+    background-color: #333;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover */
+.modal-content button:hover {
+    background-color: #444;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Close Button Hover */
+.close-btn:hover {
+    color: #ff5555;
+}
+
+/* Hidden Class for Modals */
+.hidden {
+    display: none;
+}
+
+/* Loading Line Styles */
+.loading-line {
+    width: 0%;
+    height: 5px;
+    background-color: #3a1a99;
+    margin-top: 10px;
+    transition: width 0.3s ease;
+    position: relative;
+    top: 10px; /* Adjust this to be just below the input */
+    left: 0;
+    display: block;
+    margin: 20px auto; /* Center the line horizontally */
+}
+
+/* Hidden class to hide the loading line */
+.hidden {
+    display: none;
+}
+
+/* Smooth text input clearing animation */
+textarea:focus {
+    outline: none;
+}
+
+.container p {
+    font-size: 18px;
+    color: #b0b0b0; /* Subtle contrast for instruction text */
+    margin: 10px 0;
+}
+
+.frequency-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.frequency-bar {
+    height: 20px;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.high {
+    background-color: #ff6666; /* Red for high cards */
+    width: 0%; /* Initial width */
+}
+
+.neutral {
+    background-color: #6666ff; /* Blue for neutral cards */
+    width: 0%; /* Initial width */
+}
+
+.low {
+    background-color: #66ff66; /* Green for low cards */
+    width: 0%; /* Initial width */
+}
